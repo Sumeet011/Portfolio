@@ -21,7 +21,7 @@ export async function GET() {
 
   const photo = await getVCardPhoto(USER.avatar)
   if (photo) {
-    card.addPhoto(photo.image, photo.mime)
+    card.addPhoto(photo.image, photo.mime || "image/jpeg")
   }
 
   if (USER.jobs.length > 0) {
@@ -33,7 +33,10 @@ export async function GET() {
     status: 200,
     headers: {
       "Content-Type": "text/x-vcard",
-      "Content-Disposition": `attachment; filename=${USER.username}-vcard.vcf`,
+      // Use RFC5987 filename* to allow UTF-8 filenames safely in Content-Disposition
+      "Content-Disposition": `attachment; filename*=UTF-8''${encodeURIComponent(
+        `${USER.username}-vcard.vcf`
+      )}`,
     },
   })
 }
