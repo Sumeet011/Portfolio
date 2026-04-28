@@ -1,6 +1,4 @@
-import { NextResponse } from "next/server"
 import sharp from "sharp"
-import VCard from "vcard-creator"
 
 import { USER } from "@/features/portfolio/data/user"
 import { decodeEmail, decodePhoneNumber } from "@/utils/string"
@@ -16,29 +14,74 @@ function normalizeToASCII(str: string): string {
     .replace(/[^\x00-\x7F]/g, "")
 }
 
-export async function GET() {
-  const card = new VCard()
+function escapeVCardValue(value: string): string {
+  return value
+    .replace(/\\/g, "\\\\")
+    .replace(/\n/g, "\\n")
+    .replace(/;/g, "\\;")
+    .replace(/,/g, "\\,")
+}
 
-  card
-    .addName(normalizeToASCII(USER.lastName), normalizeToASCII(USER.firstName))
-    .addPhoneNumber(normalizeToASCII(decodePhoneNumber(USER.phoneNumber)))
-    .addAddress(normalizeToASCII(USER.address))
-    .addEmail(normalizeToASCII(decodeEmail(USER.email)))
-    .addURL(normalizeToASCII(USER.website))
+function foldVCardLine(line: string, maxLength = 75): string[] {
+  if (line.length <= maxLength) {
+    return [line]
+  }
+
+  const folded: string[] = []
+  let remaining = line
+  while (remaining.length > maxLength) {
+    folded.push(remaining.slice(0, maxLength))
+    remaining = ` ${remaining.slice(maxLength)}`
+  }
+
+  folded.push(remaining)
+  return folded
+}
+
+export async function GET() {
+  const firstName = normalizeToASCII(USER.firstName)
+  const lastName = normalizeToASCII(USER.lastName)
+  const phone = normalizeToASCII(decodePhoneNumber(USER.phoneNumber))
+  const address = normalizeToASCII(USER.address)
+  const email = normalizeToASCII(decodeEmail(USER.email))
+  const website = normalizeToASCII(USER.website)
 
   const photo = await getVCardPhoto(USER.avatar)
-  if (photo) {
-    card.addPhoto(photo.image, photo.mime || "image/jpeg")
-  }
 
+  let company = ""
+  let title = ""
   if (USER.jobs.length > 0) {
-    const company = USER.jobs[0]
-    card
-      .addCompany(normalizeToASCII(company.company))
-      .addJobtitle(normalizeToASCII(company.title))
+    company = normalizeToASCII(USER.jobs[0].company)
+    title = normalizeToASCII(USER.jobs[0].title)
   }
 
-  const vCardContent = card.toString()
+  const vCardLines = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    `N:${escapeVCardValue(lastName)};${escapeVCardValue(firstName)};;;`,
+    `FN:${escapeVCardValue(`${firstName} ${lastName}`.trim())}`,
+    `TEL;TYPE=CELL:${escapeVCardValue(phone)}`,
+    `EMAIL;TYPE=INTERNET:${escapeVCardValue(email)}`,
+    `ADR;TYPE=HOME:;;${escapeVCardValue(address)};;;;`,
+    `URL:${escapeVCardValue(website)}`,
+  ]
+
+  if (company) {
+    vCardLines.push(`ORG:${escapeVCardValue(company)}`)
+  }
+
+  if (title) {
+    vCardLines.push(`TITLE:${escapeVCardValue(title)}`)
+  }
+
+  if (photo) {
+    const photoLine = `PHOTO;ENCODING=b;TYPE=JPEG:${photo.image}`
+    vCardLines.push(...foldVCardLine(photoLine))
+  }
+
+  vCardLines.push("END:VCARD")
+
+  const vCardContent = vCardLines.join("\r\n")
   // Use ASCII-safe filename to avoid ByteString conversion issues
   const filename = "contact-vcard.vcf"
 
