@@ -8,11 +8,16 @@ import { decodeEmail, decodePhoneNumber } from "@/utils/string"
 export const revalidate = false
 export const dynamic = "force-dynamic"
 
+// Normalize Unicode characters to ASCII equivalents
+function normalizeToASCII(str: string): string {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+}
+
 export async function GET() {
   const card = new VCard()
 
   card
-    .addName(USER.lastName, USER.firstName)
+    .addName(normalizeToASCII(USER.lastName), normalizeToASCII(USER.firstName))
     .addPhoneNumber(decodePhoneNumber(USER.phoneNumber))
     .addAddress(USER.address)
     .addEmail(decodeEmail(USER.email))
