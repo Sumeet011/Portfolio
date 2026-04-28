@@ -29,14 +29,14 @@ export async function GET() {
     card.addCompany(company.company).addJobtitle(company.title)
   }
 
-  return new NextResponse(card.toString(), {
+  const vCardContent = card.toString()
+  const filename = `${USER.username}-vcard.vcf`
+
+  return new Response(vCardContent, {
     status: 200,
     headers: {
-      "Content-Type": "text/x-vcard",
-      // Use RFC5987 filename* to allow UTF-8 filenames safely in Content-Disposition
-      "Content-Disposition": `attachment; filename*=UTF-8''${encodeURIComponent(
-        `${USER.username}-vcard.vcf`
-      )}`,
+      "Content-Type": "text/vcard; charset=utf-8",
+      "Content-Disposition": `attachment; filename*=UTF-8''${encodeURIComponent(filename)}; filename="${filename}"`,
     },
   })
 }
@@ -64,7 +64,7 @@ async function getVCardPhoto(url: string) {
 
     return {
       image,
-      mime: "jpeg",
+      mime: "image/jpeg",
     }
   } catch {
     return null
