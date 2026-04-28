@@ -29,13 +29,14 @@ export async function GET() {
   }
 
   const vCardContent = card.toString()
-  const filename = `${USER.username}-vcard.vcf`
+  // Use ASCII-safe filename to avoid ByteString conversion issues
+  const filename = "contact-vcard.vcf"
 
   return new Response(vCardContent, {
     status: 200,
     headers: {
       "Content-Type": "text/vcard; charset=utf-8",
-      "Content-Disposition": `attachment; filename*=UTF-8''${encodeURIComponent(filename)}; filename="${filename}"`,
+      "Content-Disposition": `attachment; filename="${filename}"`,
     },
   })
 }
