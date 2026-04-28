@@ -10,7 +10,10 @@ export const dynamic = "force-dynamic"
 
 // Normalize Unicode characters to ASCII equivalents
 function normalizeToASCII(str: string): string {
-  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+  return str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^\x00-\x7F]/g, "")
 }
 
 export async function GET() {
@@ -18,10 +21,10 @@ export async function GET() {
 
   card
     .addName(normalizeToASCII(USER.lastName), normalizeToASCII(USER.firstName))
-    .addPhoneNumber(decodePhoneNumber(USER.phoneNumber))
-    .addAddress(USER.address)
-    .addEmail(decodeEmail(USER.email))
-    .addURL(USER.website)
+    .addPhoneNumber(normalizeToASCII(decodePhoneNumber(USER.phoneNumber)))
+    .addAddress(normalizeToASCII(USER.address))
+    .addEmail(normalizeToASCII(decodeEmail(USER.email)))
+    .addURL(normalizeToASCII(USER.website))
 
   const photo = await getVCardPhoto(USER.avatar)
   if (photo) {
@@ -30,7 +33,9 @@ export async function GET() {
 
   if (USER.jobs.length > 0) {
     const company = USER.jobs[0]
-    card.addCompany(company.company).addJobtitle(company.title)
+    card
+      .addCompany(normalizeToASCII(company.company))
+      .addJobtitle(normalizeToASCII(company.title))
   }
 
   const vCardContent = card.toString()
