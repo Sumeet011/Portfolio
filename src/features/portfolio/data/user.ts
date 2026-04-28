@@ -10,10 +10,12 @@ export const USER: User = {
   bio: "Creating with code. Small details matter.",
   flipSentences: [
     "Creating with code. Small details matter.",
-    "Design Engineer",
+    "Fullstack/Design Engineer",
     "Open Source Contributor",
+    "Freelancer",
+    "Content Creator",
   ],
-  address: "Sector 41b, chandigarh, India",
+  address: "Sector 41b, Chandigarh, India",
   phoneNumber: "+91 8264988895", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "Workwithsumeet.dev@gmail.com", // base64 encoded
   website: "https://sumeet-dev.me",
@@ -21,39 +23,59 @@ export const USER: User = {
   jobs: [
     {
       title: "Design Engineer",
-      company: "shadcncraft",
-      website: "https://shadcncraft.com",
-      experienceId: "shadcncraft",
+      company: "Creativio",
+      website: "https://www.instagram.com/sumeet_sharma_001/",
+      experienceId: "Self-employed",
     },
     {
       title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
-      experienceId: "quaric",
+      company: "Creativio",
+      website: "https://www.instagram.com/sumeet_sharma_001/",
+      experienceId: "Creativio",
     },
   ],
   about: `
-- Design Engineer with 5+ years of experience, known for pixel-perfect execution and strong attention to small details.
-- Passionate about exploring new technologies and turning ideas into reality through polished, thoughtfully crafted personal projects.
-- Creator of [chanhdai.com](https://github.com/ncdai/chanhdai.com) (1.6k stars), [React Wheel Picker](https://react-wheel-picker.chanhdai.com) (16k+ weekly downloads, ▲Vercel OSS Program), and [ZaDark](https://zadark.com) (80k+ downloads, 30k+ users) — peak metrics.
+- Design/Full-Stack Engineer with 2+ years of experience, delivering pixel-perfect UIs and handling complex full-stack systems with strong attention to detail.
+- Ranked among top performers globally — LeetCode (top 0.8%, 2290+), GeeksforGeeks (top 0.3%, rank 520), CodeChef (4★, 1929+).
+- Built and scaled a UI/UX Instagram brand (@uiux_sumeet) to 25.8K+ followers, creating high-quality design content and working with businesses on growth-focused solutions.
 `,
   avatar:
     "https://res.cloudinary.com/phonewraps/image/upload/v1777354907/avatar_1776182693_zdsnpp.png",
   ogImage:
     "https://assets.chanhdai.com/images/screenshot-og-image-dark.png?v=8",
-  namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
-  timeZone: "Asia/Ho_Chi_Minh",
+  namePronunciationUrl:
+    "https://res.cloudinary.com/phonewraps/video/upload/v1777355906/ttsmaker-file-2026-4-28-11-25-54_jvbfgt.mp3",
+  timeZone: "Asia/Kolkata",
   keywords: [
-    "ncdai",
-    "nguyenchanhdai",
-    "nguyen chanh dai",
-    "chanhdai",
-    "chanh dai",
-    "iamncdai",
-    "quaric",
-    "zadark",
-    "nguyễn chánh đại",
-    "chánh đại",
+    "sumeet",
+    "sumeet sharma",
+    "sumeetsharma",
+    "sumeet dev",
+    "sumeet developer",
+    "sumeet fullstack",
+    "sumeet engineer",
+    "sumeet portfolio",
+    "sumeet coding",
+    "sumeet dsa",
+    "sumeet competitive programming",
+    "sumeet leetcode",
+    "sumeet codechef",
+    "sumeet geeksforgeeks",
+    "sumeet uiux",
+    "sumeet design",
+    "sumeet ui designer",
+    "sumeet frontend",
+    "sumeet backend",
+    "sumeet nextjs",
+    "sumeet react",
+    "uiux sumeet",
+    "uiux_sumeet",
+    "workwithsumeet",
+    "sumeet india",
+    "sumeet developer india",
+    "sumeet fullstack engineer",
+    "sumeet sharma developer",
+    "sumeet sharma portfolio",
   ],
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  dateCreated: "2024-10-20", // YYYY-MM-DD
 }

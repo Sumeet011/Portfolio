@@ -3,7 +3,8 @@ import type { Testimonial } from "../types/testimonials"
 // Long quotes (more than 50 characters), ordered by date ascending
 export const TESTIMONIALS_1: Testimonial[] = [
   {
-    authorAvatar: "https://unavatar.io/x/dimicx",
+    authorAvatar:
+      "https://framerusercontent.com/images/y2oiT5Vf0hcqMOpQIR7NrhoHPY.jpg?scale-down-to=512&width=1080&height=1080",
     authorName: "dimi",
     authorTagline: "Design Engineer",
     url: "https://x.com/dimicx/status/2035018694053577149",

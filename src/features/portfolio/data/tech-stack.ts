@@ -20,18 +20,6 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Languages"],
   },
   {
-    key: "php",
-    title: "PHP",
-    href: "https://www.php.net/",
-    categories: ["Languages"],
-  },
-  {
-    key: "java",
-    title: "Java",
-    href: "https://www.java.com/",
-    categories: ["Languages"],
-  },
-  {
     key: "react",
     title: "React",
     href: "https://react.dev/",
@@ -78,19 +66,6 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Frontend"],
   },
   {
-    key: "tanstack",
-    title: "TanStack",
-    href: "https://tanstack.com/",
-    categories: ["Frontend"],
-    theme: true,
-  },
-  {
-    key: "mobx-state-tree",
-    title: "MobX-State-Tree",
-    href: "https://mobx-state-tree.js.org/",
-    categories: ["Frontend"],
-  },
-  {
     key: "redux",
     title: "Redux",
     href: "https://redux.js.org/",
@@ -114,12 +89,7 @@ export const TECH_STACK: TechStack[] = [
     href: "https://bun.sh/",
     categories: ["Backend & Database"],
   },
-  {
-    key: "laravel",
-    title: "Laravel",
-    href: "https://laravel.com/",
-    categories: ["Backend & Database"],
-  },
+
   {
     key: "postgresql",
     title: "PostgreSQL",
