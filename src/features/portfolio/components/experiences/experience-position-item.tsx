@@ -1,5 +1,5 @@
 import { differenceInMonths, parse } from "date-fns"
-import { BriefcaseBusinessIcon, InfinityIcon } from "lucide-react"
+import { BriefcaseBusinessIcon, InfinityIcon, LinkIcon } from "lucide-react"
 
 import {
   Collapsible,
@@ -9,6 +9,11 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/base/ui/collapsible"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/base/ui/tooltip"
 import { Markdown } from "@/components/markdown"
 import { Separator } from "@/components/ui/separator"
 import { Tag } from "@/components/ui/tag"
@@ -18,8 +23,10 @@ import { cn } from "@/lib/utils"
 
 export function ExperiencePositionItem({
   position,
+  companyWebsite,
 }: {
   position: ExperiencePosition
+  companyWebsite?: string
 }) {
   const { start, end } = position.employmentPeriod
   const isOngoing = !end
@@ -52,6 +59,28 @@ export function ExperiencePositionItem({
           </div>
 
           <h4 className="flex-1 font-medium text-balance">{position.title}</h4>
+
+          {companyWebsite && (
+            <Tooltip>
+              <TooltipTrigger
+                render={
+                  <a
+                    className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
+                    href={companyWebsite}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    referrerPolicy="no-referrer"
+                    aria-label="Open Company Website"
+                  >
+                    <LinkIcon className="pointer-events-none size-4" />
+                  </a>
+                }
+              />
+              <TooltipContent>
+                <p>Open Company Website</p>
+              </TooltipContent>
+            </Tooltip>
+          )}
 
           <div className="shrink-0 text-muted-foreground group-data-disabled:hidden [&_svg]:size-4">
             <CollapsibleChevronsIcon duration={0.15} />

@@ -88,7 +88,8 @@ export function ProjectItem({
                     className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
                     href={addQueryParams(project.link, UTM_PARAMS)}
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
+                    referrerPolicy="no-referrer"
                     aria-label="Open Project Link"
                   >
                     <LinkIcon className="pointer-events-none size-4" />

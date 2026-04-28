@@ -46,16 +46,16 @@ export const metadata: Metadata = {
   keywords: SITE_INFO.keywords,
   authors: [
     {
-      name: "ncdai",
+      name: "Sumeet Sharma",
       url: SITE_INFO.url,
     },
   ],
-  creator: "ncdai",
+  creator: "Sumeet Sharma",
   openGraph: {
     siteName: SITE_INFO.name,
     url: "/",
     type: "profile",
-    locale: "en_US",
+    locale: "Ind",
     firstName: USER.firstName,
     lastName: USER.lastName,
     username: USER.username,
@@ -78,24 +78,24 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://assets.chanhdai.com/images/favicon.ico",
+        url: "https://res.cloudinary.com/phonewraps/image/upload/v1777395465/Gemini_Generated_Image_x33xrkx33xrkx33x-removebg-preview_pemthz.png",
         sizes: "32x32",
       },
       {
-        url: "https://assets.chanhdai.com/images/favicon.svg",
+        url: "https://res.cloudinary.com/phonewraps/image/upload/v1777395465/Gemini_Generated_Image_x33xrkx33xrkx33x-removebg-preview_pemthz.png",
         sizes: "any",
         type: "image/svg+xml",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "https://assets.chanhdai.com/images/favicon-dark.svg",
+        url: "https://res.cloudinary.com/phonewraps/image/upload/v1777395465/Gemini_Generated_Image_x33xrkx33xrkx33x-removebg-preview_pemthz.png",
         sizes: "any",
         type: "image/svg+xml",
         media: "(prefers-color-scheme: dark)",
       },
     ],
     apple: {
-      url: "https://assets.chanhdai.com/images/apple-touch-icon.png",
+      url: "https://assets.chanhdai.com/images/apple-thttps://res.cloudinary.com/phonewraps/image/upload/v1777395465/Gemini_Generated_Image_x33xrkx33xrkx33x-removebg-preview_pemthz.pngouch-icon.png",
       type: "image/png",
       sizes: "180x180",
     },

@@ -90,7 +90,7 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "devflow",
     companyName: "DevFlow AI",
-    companyLogo: "https://www.sumeet-dev.me/logo.svg",
+    companyLogo: "https://www.devflows.tech/logo.svg",
     companyWebsite: "https://devflows.tech",
     positions: [
       {

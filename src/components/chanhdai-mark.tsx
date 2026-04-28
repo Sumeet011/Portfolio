@@ -3,18 +3,18 @@ export function ChanhDaiMark(props: React.ComponentProps<"svg">) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 512 256"
+      viewBox="0 0 456 240"
       aria-hidden
       {...props}
     >
       <path
         fill="currentColor"
-        d="M192 256H64v-64h128v64ZM448 64H320v128h128v64H256V0h192v64ZM64 192H0V64h64v128ZM512 192h-64V64h64v128ZM192 64H64V0h128v64Z"
+        d="M43 0h130v46H43ZM171 37h44v42h-44ZM0 45h45v58H0ZM43 99h130v46H43ZM172 135h43v60h-43ZM0 165h45v41H0ZM43 194h130v46H43ZM284 0h130v46H284ZM412 37h44v42h-44ZM241 45h45v58h-45ZM284 99h130v46H284ZM413 135h43v60h-43ZM241 165h45v41h-45ZM284 194h130v46H284Z"
       />
     </svg>
   )
 }
 
 export function getMarkSVG(color: string) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 256 128"><path fill="${color}" d="M96 128H32V96h64v32ZM224 32h-64v64h64v32h-96V0h96v32ZM32 96H0V32h32v64ZM256 96h-32V32h32v64ZM96 32H32V0h64v32Z"/></svg>`
+  return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 456 240"><path fill="${color}" d="M43 0h130v46H43ZM171 37h44v42h-44ZM0 45h45v58H0ZM43 99h130v46H43ZM172 135h43v60h-43ZM0 165h45v41H0ZM43 194h130v46H43ZM284 0h130v46H284ZM412 37h44v42h-44ZM241 45h45v58h-45ZM284 99h130v46H284ZM413 135h43v60h-43ZM241 165h45v41h-45ZM284 194h130v46H284Z"/></svg>`
 }

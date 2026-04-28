@@ -1,8 +1,5 @@
 import Image from "next/image"
 
-import { UTM_PARAMS } from "@/config/site"
-import { addQueryParams } from "@/utils/url"
-
 import type { Experience } from "../../types/experiences"
 import { ExperiencePositionItem } from "./experience-position-item"
 
@@ -34,9 +31,10 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
           {experience.companyWebsite ? (
             <a
               className="link"
-              href={addQueryParams(experience.companyWebsite, UTM_PARAMS)}
+              href={experience.companyWebsite}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
+              referrerPolicy="no-referrer"
             >
               {experience.companyName}
             </a>
@@ -58,7 +56,11 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
 
       <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
         {experience.positions.map((position) => (
-          <ExperiencePositionItem key={position.id} position={position} />
+          <ExperiencePositionItem
+            key={position.id}
+            position={position}
+            companyWebsite={experience.companyWebsite}
+          />
         ))}
       </div>
     </div>
