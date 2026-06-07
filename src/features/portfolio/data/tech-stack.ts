@@ -1,0 +1,263 @@
+import type { TechStack } from "../types/tech-stack"
+export const TECH_STACK: TechStack[] = [
+  // Languages
+  {
+    key: "cpp",
+    title: "C++",
+    icon: "cpp",
+    href: "https://isocpp.org/",
+    categories: ["Languages"],
+  },
+  {
+    key: "typescript",
+    title: "TypeScript",
+    icon: "ts",
+    href: "https://www.typescriptlang.org/",
+    categories: ["Languages"],
+  },
+  {
+    key: "js",
+    title: "JavaScript",
+    icon: "js",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    categories: ["Languages"],
+  },
+  {
+    key: "python",
+    title: "Python",
+    icon: "python",
+    href: "https://www.python.org/",
+    categories: ["Languages"],
+  },
+  {
+    key: "solidity",
+    title: "Solidity",
+    icon: "solidity",
+    href: "https://soliditylang.org/",
+    categories: ["Languages"],
+  },
+
+  // Frontend
+  {
+    key: "react",
+    title: "React",
+    icon: "react",
+    href: "https://react.dev/",
+    categories: ["Frontend"],
+  },
+  {
+    key: "nextjs",
+    title: "Next.js",
+    icon: "nextjs",
+    href: "https://nextjs.org/",
+    categories: ["Frontend"],
+    theme: true,
+  },
+  {
+    key: "tailwindcss",
+    title: "Tailwind CSS",
+    icon: "tailwind",
+    href: "https://tailwindcss.com/",
+    categories: ["Frontend"],
+  },
+  {
+    key: "shadcn-ui",
+    title: "shadcn/ui",
+    icon: "shadcnui",
+    href: "https://ui.shadcn.com/",
+    categories: ["Frontend"],
+    theme: true,
+  },
+  {
+    key: "redux",
+    title: "Redux Toolkit",
+    icon: "redux",
+    href: "https://redux-toolkit.js.org/",
+    categories: ["Frontend"],
+  },
+  {
+    key: "tanstack-query",
+    title: "TanStack Query",
+    icon: "reactquery",
+    href: "https://tanstack.com/query/latest",
+    categories: ["Frontend"],
+  },
+  {
+    key: "framer-motion",
+    title: "Framer Motion",
+    icon: "framer",
+    href: "https://www.framer.com/motion/",
+    categories: ["Frontend"],
+  },
+
+  // Backend & Database
+  {
+    key: "nodejs",
+    title: "Node.js",
+    icon: "nodejs",
+    href: "https://nodejs.org/",
+    categories: ["Backend & Database"],
+  },
+  {
+    key: "express",
+    title: "Express.js",
+    icon: "express",
+    href: "https://expressjs.com/",
+    categories: ["Backend & Database"],
+  },
+  {
+    key: "nestjs",
+    title: "NestJS",
+    icon: "nestjs",
+    href: "https://nestjs.com/",
+    categories: ["Backend & Database"],
+  },
+  {
+    key: "bun",
+    title: "Bun",
+    icon: "bun",
+    href: "https://bun.sh/",
+    categories: ["Backend & Database"],
+  },
+  {
+    key: "postgresql",
+    title: "PostgreSQL",
+    icon: "postgres",
+    href: "https://www.postgresql.org/",
+    categories: ["Backend & Database"],
+  },
+  {
+    key: "mysql",
+    title: "MySQL",
+    icon: "mysql",
+    href: "https://www.mysql.com/",
+    categories: ["Backend & Database"],
+  },
+  {
+    key: "mongodb",
+    title: "MongoDB",
+    icon: "mongodb",
+    href: "https://www.mongodb.com/",
+    categories: ["Backend & Database"],
+  },
+  {
+    key: "redis",
+    title: "Redis",
+    icon: "redis",
+    href: "https://redis.io/",
+    categories: ["Backend & Database"],
+  },
+  {
+    key: "prisma",
+    title: "Prisma",
+    icon: "prisma",
+    href: "https://www.prisma.io/",
+    categories: ["Backend & Database"],
+  },
+  {
+    key: "firebase",
+    title: "Firebase",
+    icon: "firebase",
+    href: "https://firebase.google.com/",
+    categories: ["Backend & Database"],
+  },
+  {
+    key: "supabase",
+    title: "Supabase",
+    icon: "supabase",
+    href: "https://supabase.com/",
+    categories: ["Backend & Database"],
+  },
+
+  // Web3
+  {
+    key: "ethers",
+    title: "Ethers.js",
+    icon: "ethers",
+    href: "https://docs.ethers.org/",
+    categories: ["Web3"],
+  },
+  {
+    key: "wagmi",
+    title: "Wagmi",
+    icon: "wagmi",
+    href: "https://wagmi.sh/",
+    categories: ["Web3"],
+  },
+  {
+    key: "web3js",
+    title: "Web3.js",
+    icon: "web3js",
+    href: "https://web3js.org/",
+    categories: ["Web3"],
+  },
+
+  // Cloud & DevOps
+  {
+    key: "aws",
+    title: "AWS",
+    icon: "aws",
+    href: "https://aws.amazon.com/",
+    categories: ["Cloud & DevOps"],
+  },
+  {
+    key: "vercel",
+    title: "Vercel",
+    icon: "vercel",
+    href: "https://vercel.com/",
+    categories: ["Cloud & DevOps"],
+  },
+  {
+    key: "github-actions",
+    title: "GitHub Actions",
+    icon: "githubactions",
+    href: "https://github.com/features/actions",
+    categories: ["Cloud & DevOps"],
+  },
+  {
+    key: "docker",
+    title: "Docker",
+    icon: "docker",
+    href: "https://www.docker.com/",
+    categories: ["Cloud & DevOps"],
+  },
+  {
+    key: "linux",
+    title: "Linux",
+    icon: "linux",
+    href: "https://www.linux.org/",
+    categories: ["Cloud & DevOps"],
+  },
+
+  // Dev Tools
+  {
+    key: "git",
+    title: "Git",
+    icon: "git",
+    href: "https://git-scm.com/",
+    categories: ["Dev Tools"],
+  },
+
+  // Design
+  {
+    key: "figma",
+    title: "Figma",
+    icon: "figma",
+    href: "https://www.figma.com/",
+    categories: ["Design"],
+  },
+  {
+    key: "adobe-xd",
+    title: "Adobe XD",
+    icon: "xd",
+    href: "https://www.adobe.com/products/xd.html",
+    categories: ["Design"],
+  },
+  {
+    key: "photoshop",
+    title: "Photoshop",
+    icon: "photoshop",
+    href: "https://www.adobe.com/products/photoshop.html",
+    categories: ["Design"],
+  },
+]
