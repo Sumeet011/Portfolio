@@ -4,8 +4,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: "https://assets.chanhdai.com/images/link-icons/x.webp?v=2",
     title: "X",
-    subtitle: "@Sumeetsharma02",
-    href: "https://x.com/Sumeetsharma02",
+    subtitle: "@Sumeetcoder",
+    href: "https://x.com/Sumeetcoder",
   },
   {
     icon: "https://assets.chanhdai.com/images/link-icons/github.webp?v=2",
@@ -32,10 +32,9 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://leetcode.com/u/sumeet_Sharma-1/",
   },
   {
-    icon:"https://www.codechef.com/favicon.ico",
+    icon: "https://www.codechef.com/favicon.ico",
     title: "CodeChef",
     subtitle: "Sumeet Sharma",
     href: "https://www.codechef.com/users/sumeetsharma01",
-
-  }
+  },
 ]
