@@ -1,0 +1,50 @@
+---
+title: NightCode
+description: A terminal-based AI coding assistant with Plan and Build modes, file mentions, multiple model providers, and usage-aware billing.
+image: https://res.cloudinary.com/phonewraps/image/upload/v1786273708/Screenshot_2026-08-09_163544_rymjkp.png
+category: works
+createdAt: "2026-08-09"
+updatedAt: "2026-08-09"
+---
+
+## Overview
+
+NightCode is a polished terminal AI assistant for developers who want to stay inside the project they are working on. It combines a React-based TUI, a streaming chat backend, and safe local tools so the assistant can inspect, plan, and implement changes without leaving the command line.
+
+<FramedImage
+  src="https://res.cloudinary.com/phonewraps/image/upload/v1786273708/Screenshot_2026-08-09_163544_rymjkp.png"
+  alt="NightCode Project Main preview"
+/>
+
+## GitHub repo
+
+[NightCode](https://github.com/Sumeet011/NightCode)
+
+## What stands out
+
+- Two clear modes keep the workflow intentional: Plan for read-only exploration and Build for hands-on editing.
+- A native terminal UI handles prompts, tool calls, dialogs, sessions, and model selection in one place.
+- File mentions with `@` make it easy to reference folders and files from the current project.
+- The app supports multiple model providers, so the assistant can route work across Anthropic, OpenAI, Google, and Groq models.
+- Usage tracking and Polar billing are built in, which makes the project feel like a real product rather than a demo.
+
+## Visual flow
+
+<img
+  src="https://res.cloudinary.com/phonewraps/image/upload/v1786273709/Screenshot_2026-08-09_163710_okjtxf.png"
+  alt="NightCode Layout Preview"
+  style={{ width: "100%", borderRadius: "16px", marginTop: "1rem" }}
+/>
+
+The layout is intentionally compact and focused, which fits the terminal-first nature of the product. The repo emphasizes practical developer tasks: reading files, searching code, switching between modes, and completing auth or billing flows from the CLI.
+
+## In short
+
+NightCode feels like a serious developer tool with a clean scope: stay in the terminal, understand the codebase quickly, and move from plan to implementation with minimal friction.
+
+## Tech snapshot
+
+- Bun and TypeScript
+- OpenTUI, React 19, and React Router
+- Hono API with streamed AI responses
+- PostgreSQL, Prisma, Clerk, and Polar
